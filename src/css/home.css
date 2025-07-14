@@ -1,0 +1,95 @@
+/* --Hero Section-- */
+/* --Hero Section-- */
+#hero {
+  height: 500px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8) url(../assets/other/hero.jpg);
+  background-blend-mode: hue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --Spacing Block-- */
+.hero-spacer {
+  height: 150px;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* --Main Grid Layout-- */
+.home-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* --Blog Section Styling (nested inside Blog component)-- */
+/* Blog Section Container */
+.blog__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Blog Heading */
+.blog__box .heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Blog Listing Layout */
+.blog__listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* More Posts Button */
+.more__post_btn {
+  margin-top: 2rem;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.more__post_btn a {
+  color: var(--color-btn-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.more__post_btn:hover {
+  background-color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+/* --Sidebar (Right column)-- */
+.sidebar {
+  border: 2px solid black;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  text-align: center;
+  color: var(--color-text);
+}

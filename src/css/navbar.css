@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
+
+/* Header Wrapper */
+.header {
+  width: 100%;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Brand Logo */
+.brand__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.brand__name {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-heading);
+  font-family: "Aladin", system-ui;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav Container */
+.nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Menu Links */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  position: sticky;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Right Side Controls */
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Search Bar */
+.nav__search {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-border);
+  background-color: #fff;
+  padding: 4px 10px;
+  position: relative;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.nav__search:hover {
+  border-color: var(--color-primary);
+}
+
+.nav__search input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  padding: 4px;
+  width: 160px;
+  transition: transform 0.2s ease;
+}
+
+.nav__search input:focus {
+  transform: scale(1.05);
+}
+
+.nav__search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__search-icon {
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+/* Action Buttons */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__btn {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.nav__btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-btn-text);
+  border: none;
+}
+
+.nav__btn--primary:hover {
+  opacity: 0.9;
+}
+
+.nav__btn--secondary:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-text);
+  border-color: var(--color-primary-dark);
+}
