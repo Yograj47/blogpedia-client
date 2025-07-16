@@ -36,8 +36,8 @@ function NavBar() {
                     </div>
 
                     <div className="nav__actions">
-                        <a href="/login" className="nav__btn nav__btn--primary">Login</a>
-                        <a href="/register" className="nav__btn nav__btn--secondary">Register</a>
+                        <a href="/demo" className="nav__btn nav__btn--primary">Demo</a>
+                        {/* <a href="/register" className="nav__btn nav__btn--secondary">Register</a> */}
                     </div>
                 </div>
             </nav>

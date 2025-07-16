@@ -45,9 +45,24 @@
 
 .blog_page__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 66%));
   gap: 2rem;
   width: 100%;
+  justify-content: center;
+}
+
+.blog_page__list .blog-card__content {
+  flex-direction: column;
+  justify-content: normal;
+  height: auto;
+  gap: 0.5rem;
+}
+
+.blog__no-post {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-top: 2rem;
 }
 
 /* === Sidebar Section === */

@@ -1,5 +1,5 @@
-import Blog from '../components/blogSection';
-import Hero from '../components/heroSection';
+import Blog from '../components/BlogSection';
+import Hero from '../components/HeroSection';
 import '../css/home.css';
 import '../css/navbar.css';
 

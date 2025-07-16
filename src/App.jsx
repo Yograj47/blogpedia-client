@@ -1,10 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar.jsx";
 import Home from "./pages/Home";
 import Blog from './pages/Blog';
 import BlogPage from "./pages/BlogDetailPage";
 import About from './pages/AboutPage';
 import Contact from './pages/Contact';
+import NotFoundPage from './pages/NotFound.jsx';
+import TestForm from './pages/Test.jsx';
+
 
 const router = createBrowserRouter([
 
@@ -48,6 +51,17 @@ const router = createBrowserRouter([
     ),
   },
 
+  {
+    path: "/blog/:blogId/edit",
+    element: (
+      <>
+        <NavBar />
+        <BlogPage />
+      </>
+    ),
+  },
+
+
   // All the blogs 
   {
     path: "/blogs",
@@ -58,14 +72,22 @@ const router = createBrowserRouter([
       </>
     ),
   },
-
+  {
+    path: "/demo",
+    element: (
+      <>
+        <NavBar />
+        <TestForm />
+      </>
+    ),
+  },
   // Page not found
   {
     path: "*",
     element: (
       <>
-        <NavBar />
-        <h1>404 Not Found</h1>
+        {/* <NavBar /> */}
+        <NotFoundPage />
       </>
     ),
   }

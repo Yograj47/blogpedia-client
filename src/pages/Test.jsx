@@ -37,15 +37,13 @@ function TestForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        const data = {
-            title: formData.get("title"),
-            content: formData.get("content"),
-            author: formData.get("author"),
 
-            category: formData.get("category")
-        }
-        console.log("Form Data Submitted:", data);
-        await axios.post("http://localhost:3000/api/blogs", data)
+        console.log("Form Data Submitted:", formData);
+        await axios.post("http://localhost:3000/api/v1/blog", formData, {
+            headers: {
+                'Content-Type': 'mutipart/form-data'
+            }
+        })
             .then(res => {
                 console.log("Blog Added Successfully:", res.data);
                 alert("Blog Added Successfully!");
@@ -84,6 +82,10 @@ function TestForm() {
                         <option value="Travel">Travel</option>
                         <option value="Food">Food</option>
                     </select>
+                </label>
+                <label style={labelStyle}>
+                    Image URL:
+                    <input type="file" name="file" required style={inputStyle} />
                 </label>
                 <button type="submit" style={buttonStyle}>Add Blog</button>
             </form>

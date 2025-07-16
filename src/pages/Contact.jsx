@@ -14,7 +14,7 @@ function Contact() {
             Message: formData.get('message')
         }
 
-        await axios.post(`${API_URL}/api/contact`, contactData)
+        await axios.post(`${API_URL}/api/v1/contact`, contactData)
             .then((res) => {
                 console.log("Message Send Successfully:", res.data);
                 alert("Message Send Successfully!");

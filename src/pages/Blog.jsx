@@ -3,13 +3,13 @@ import axios from 'axios';
 import '../css/blog.css';
 import BlogCard from '../components/blogCard';
 import Pagination from '../utils/Pagination';
-import { ClipLoader } from "react-spinners";
 import Spinner from '../utils/spinner';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Blog() {
     const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [currPage, setCurrPage] = useState(1);  // start from 1
     const [postPerPage] = useState(8);
@@ -17,8 +17,8 @@ function Blog() {
     const fetchBlogs = async (category) => {
         const url =
             category && category !== 'All'
-                ? `${API_URL}/api/blogs?category=${category}`
-                : `${API_URL}/api/blogs/`;
+                ? `${API_URL}/api/v1/blog?category=${category}`
+                : `${API_URL}/api/v1/blog/`;
 
         try {
             const res = await axios.get(url);
@@ -27,6 +27,8 @@ function Blog() {
         } catch (err) {
             console.error('Error fetching blogs:', err);
             setBlogs([]);  // clear on error
+        } finally {
+            setLoading(false); // Done fetching (success or error)
         }
     };
 
@@ -61,15 +63,18 @@ function Blog() {
 
                     <div className="blog__grid">
                         <ul className="blog_page__list" id={selectedCategory}>
-                            {currPost.length === 0 ? (
+                            {loading ? (
                                 (
                                     <Spinner />
                                 )
-                            ) : (
+                            ) : blogs.length > 0 ? (
                                 currPost.map((blog) => (
                                     <BlogCard key={blog._id} blog={blog} />
                                 ))
-                            )}
+                            ) : (
+                                <p className="blog__no-post">No blogs found.</p>
+                            )
+                            }
                         </ul>
                     </div>
                 </div>
