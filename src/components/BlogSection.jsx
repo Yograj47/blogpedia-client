@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import BlogCard from './blogCard';
+import BlogCard from './BlogCard';
 const API_URL = import.meta.env.VITE_API_URL;
 import Spinner from '../utils/spinner';
 

@@ -6,8 +6,8 @@ import BlogPage from "./pages/BlogDetailPage";
 import About from './pages/AboutPage';
 import Contact from './pages/Contact';
 import NotFoundPage from './pages/NotFound.jsx';
-import TestForm from './pages/Test.jsx';
-
+import BlogForm from './components/BlogForm.jsx';
+import './css/index.css';
 
 const router = createBrowserRouter([
 
@@ -51,17 +51,6 @@ const router = createBrowserRouter([
     ),
   },
 
-  {
-    path: "/blog/:blogId/edit",
-    element: (
-      <>
-        <NavBar />
-        <BlogPage />
-      </>
-    ),
-  },
-
-
   // All the blogs 
   {
     path: "/blogs",
@@ -77,7 +66,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <NavBar />
-        <TestForm />
+        <BlogForm />
       </>
     ),
   },

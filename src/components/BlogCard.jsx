@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import truncateText from '../utils/TrimFunc';
+// import truncateText from '../utils/TrimFunc';
 
 function BlogCard({ blog }) {
     return (
@@ -17,7 +17,7 @@ function BlogCard({ blog }) {
                         <span className="blog-card__read-time">1 min read</span>
                     </div>
                     <h2 className="blog-card__title">{blog.title}</h2>
-                    <p className="blog-card__description">{truncateText(blog.content)}</p>
+                    <p className="blog-card__description" dangerouslySetInnerHTML={{ __html: blog.content.htmlContent }}></p>
                     <div className="blog-card__stats">
                         <span className="blog-card__views">{blog.views} views</span>
                         <span className="blog-card__comments">{blog.comments} comments</span>
